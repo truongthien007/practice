@@ -1,5 +1,5 @@
 champions = []
-count_to_champions = {}
+times_to_champions = {}
 nations = []
 count_to_nations = []
 
@@ -22,12 +22,13 @@ def split_data(text):
 
 def number_of_times_champion():
     for i in range(0, len(champions)):
-        if champions[i] not in count_to_champions:
+        if champions[i] not in times_to_champions:
             # count_to_champions[champions[i]] is value
-            count_to_champions[champions[i]] = 1
+            times_to_champions[champions[i]] = 1
         else:
-            count_to_champions[champions[i]] += 1
-    print(count_to_champions)
+            times_to_champions[champions[i]] += 1
+    for champion in times_to_champions:
+        print(f"{champion}: {times_to_champions[champion]}")
 
 
 def number_of_nations():
@@ -37,7 +38,6 @@ def number_of_nations():
     print(f'These {len(count_to_nations)} countries have won Wimbledon: ')
     result = sorted(count_to_nations)
     print(", ".join(result))
-
 
 
 main()
