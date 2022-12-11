@@ -15,4 +15,5 @@ for i in range(0, len(words)):
         word_to_occurrence[words[i]] += 1
 
 print(word_to_occurrence)
-
+for k, v in word_to_occurrence.items():
+    print(f'{k: <13}: {v}')
