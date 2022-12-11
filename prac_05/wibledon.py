@@ -1,12 +1,43 @@
 champions = []
+count_to_champions = {}
 nations = []
-with open("wimbledon.csv", "r", encoding="utf-8-sig") as in_file:
-    text = in_file.read()
-    in_file.close()
+count_to_nations = []
+
+
+def main():
+    with open("wimbledon.csv", "r", encoding="utf-8-sig") as in_file:
+        text = in_file.readlines()
+        in_file.close()
+        split_data(text)
+        number_of_times_champion()
+        number_of_nations()
+
+
+def split_data(text):
     for line in text[1:]:
         items = line.strip().split(",")
-        print(items)
         champions.append(items[2])
         nations.append(items[1])
-    print(champions)
-    print(nations)
+
+
+def number_of_times_champion():
+    for i in range(0, len(champions)):
+        if champions[i] not in count_to_champions:
+            # count_to_champions[champions[i]] is value
+            count_to_champions[champions[i]] = 1
+        else:
+            count_to_champions[champions[i]] += 1
+    print(count_to_champions)
+
+
+def number_of_nations():
+    for nation in nations:
+        if nation not in count_to_nations:
+            count_to_nations.append(nation)
+    print(f'These {len(count_to_nations)} countries have won Wimbledon: ')
+    result = sorted(count_to_nations)
+    print(", ".join(result))
+
+
+
+main()
