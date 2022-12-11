@@ -9,16 +9,16 @@ CODE_TO_NAME = {"QLD": "Queensland", "NSW": "New South Wales", "NT": "Northern T
 print(CODE_TO_NAME)
 
 state_code = input("Enter short state: ").upper()
-# while state_code != "":
-#     if state_code in CODE_TO_NAME:
-#         print(state_code, "is", CODE_TO_NAME[state_code])
-#     else:
-#         print("Invalid short state")
-#     state_code = input("Enter short state: ").upper()
+while state_code != "":
+    if state_code in CODE_TO_NAME:
+        print(state_code, "is", CODE_TO_NAME[state_code])
+    else:
+        print("Invalid short state")
+    state_code = input("Enter short state: ").upper()
 
-# for k, v in CODE_TO_NAME.items():
-# k is key, v is value in dictionaries
-# print(f'{k: <3} is {v}')
+for k, v in CODE_TO_NAME.items():
+    # k is key, v is value in dictionaries
+    print(f'{k: <3} is {v}')
 
 # use EAFP
 while state_code != "":
