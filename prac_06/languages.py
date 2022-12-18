@@ -6,3 +6,5 @@ visual_basic = ProgrammingLanguage("Visual Basic", "Static", False, 1991)
 print(python)
 
 programming_languages = [python, ruby, visual_basic]
+for language in programming_languages:
+    print(language)
