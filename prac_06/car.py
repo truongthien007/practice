@@ -28,7 +28,7 @@ class Car:
             self.fuel = 0
         else:
             self.fuel -= distance
-        self._odometer += distance
+            self._odometer += distance
         return distance
 
     # 5.add the __str__ method to the Car class in car.py
