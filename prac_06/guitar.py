@@ -1,6 +1,6 @@
 """
-estimate time:
-actually time:
+estimate time: 40 min
+actually time: 25 min
 """
 
 
