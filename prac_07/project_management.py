@@ -2,7 +2,8 @@ from prac_07.project import Project
 
 MENU = ['-(L)oad project', "-(S)ave project", "-(D)isplay project", "-(F)ilter project by date", "-(A)dd new project",
         "-(U)pdate project"]
-class_project =[]
+class_project = []
+
 
 def main():
     with open("project.txt", "r", encoding="utf-8-sig") as in_file:
@@ -16,6 +17,16 @@ def main():
             print("Name\tStart Date\tPriority\tCost Estimate\tCompletion Percentage", file=output_file)
             output_file.close()
         elif choice == "D":
+            class_project.sort()
+            print("Incomplete Project: ")
+            for project in class_project:
+                if project.is_complete():
+                    print(project)
+            print("Completed Projects: ")
+            for project in class_project:
+                if project.is_complete():
+                    print(project)
+
 
 def get_choice():
     for menu in MENU:
@@ -31,5 +42,6 @@ def extract_data(data):
         projects.append(items)
     for project in projects:
         class_project.append(Project(project[0], project[1], int(project[2]), float(project[3]), int(project[4])))
+
 
 main()
