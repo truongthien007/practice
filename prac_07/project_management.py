@@ -7,7 +7,9 @@ def main():
         data = in_file.readlines()
         extract_data(data)
     choice = get_choice()
-
+    while choice != "Q":
+        if choice == "S":
+            filename = input("Filename: ")
 
 def get_choice():
     for menu in MENU:
