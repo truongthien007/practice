@@ -10,6 +10,9 @@ def main():
     while choice != "Q":
         if choice == "S":
             filename = input("Filename: ")
+        output_file = open(f"{filename}.txt", "w")
+        print("Name\tStart Date\tPriority\tCost Estimate\tCompletion Percentage", file=output_file)
+        output_file.close()
 
 def get_choice():
     for menu in MENU:
