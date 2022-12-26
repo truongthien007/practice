@@ -25,3 +25,5 @@ class Guitar:
         else:
             return False
 
+    def __lt__(self, other):
+        return self.year < other.year
