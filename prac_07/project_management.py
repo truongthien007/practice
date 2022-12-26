@@ -26,6 +26,14 @@ def main():
             for project in class_project:
                 if project.is_complete():
                     print(project)
+        elif choice == "A":
+            print("New project: ")
+            name = input("Name: ")
+            start_date = input("Start date (dd/mm/yy): ")
+            priority = int(input("Priority: "))
+            cost_estimate = float(input("Cost: "))
+            completion_percentage = float(input("Percent Complete: "))
+            class_project.append(Project(name, start_date, priority, cost_estimate, completion_percentage))
 
 
 def get_choice():
